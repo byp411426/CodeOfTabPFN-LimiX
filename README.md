@@ -28,15 +28,15 @@ pip install torch scikit-learn numpy pandas huggingface-hub tqdm einops scipy ty
 
 TabPFN 与扩展库安装：
 ```bash
-pip install -e /userdata/banyongping/tempcode/TabPFN
+pip install -e ./TabPFN
 ```
 ```bash
-pip install -e "/userdata/banyongping/tempcode/tabpfn-extensions[post_hoc_ensembles]"
+pip install -e "./tabpfn-extensions[post_hoc_ensembles]"
 ```
 
 可选：提前下载 TabPFN 权重（避免首次运行时自动下载）
 ```bash
-python /userdata/banyongping/tempcode/TabPFN/scripts/download_all_models.py
+python ./TabPFN/scripts/download_all_models.py
 ```
 
 说明：
@@ -79,7 +79,7 @@ python examples/auto_tabpfn_demo_regression.py
 - 首次运行会训练/集成多种 TabPFN 配置，耗时更长。可通过示例中的 `max_time` 与 `n_ensemble_models` 控制训练上限与模型数量。
 - 如果出现 `ImportError: autogluon.tabular is not installed`，请确认已执行：
 ```bash
-pip install -e "/userdata/banyongping/tempcode/tabpfn-extensions[post_hoc_ensembles]"
+pip install -e "./tabpfn-extensions[post_hoc_ensembles]"
 ```
 
 ---
@@ -99,7 +99,7 @@ python examples/limix_demo_regression.py
 ```
 
 说明：
-- `examples/limix_demo_*` 已使用本地模型文件路径 `/userdata/banyongping/tempcode/LimiX-16M.ckpt`。
+- `examples/limix_demo_*` 已使用本地模型文件路径 `./LimiX-16M.ckpt`。
 - 配置文件使用 `LimiX/config/cls_default_noretrieval.json` 与 `LimiX/config/reg_default_noretrieval.json`，适合普通设备。
 - 回归示例会对目标值进行标准化后评估 RMSE 与 R²。
 
